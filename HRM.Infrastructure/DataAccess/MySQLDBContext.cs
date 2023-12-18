@@ -6,40 +6,40 @@ namespace HRM.Infrastructure.DataAccess
 {
     public class MySQLDBContext : DbContext
     {
-
-        static readonly string connectionString = "Server=localhost; port=3306; User ID=root; Password=abcd; Database=blog";
         private readonly IConfiguration _configuration;
+        public IConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
 
-        public MySQLDBContext(IConfiguration configuration)
+        public MySQLDBContext()
         {
-            _configuration = configuration; 
+            configurationBuilder.AddJsonFile("appSettings.json");
+            _configuration = configurationBuilder.Build();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           /* optionsBuilder.UseMySql(_configuration.GetConnectionString("connString"), ServerVersion.AutoDetect(_configuration.GetConnectionString("connString")))*/;
+            optionsBuilder.UseMySql(_configuration.GetConnectionString("connectString"), ServerVersion.AutoDetect(_configuration.GetConnectionString("connectString")));
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<EmployeeEntity>().Property(p => p.Code).IsRequired().HasMaxLength(100); 
+            modelBuilder.Entity<EmployeeEntity>().Property(p => p.Fullname).IsRequired().HasMaxLength(100);
+            modelBuilder.Entity<EmployeeEntity>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(25);
+
+
+
             modelBuilder.Entity<EmployeeEntity>()
                 .HasOne(e => e.WorkInfo)
                 .WithOne(w => w.Employee)
                 .HasForeignKey<WorkInfoEntity>(w => w.EmployeeId);
 
-            modelBuilder.Entity<EmployeeEntity>()
-                .HasOne(e => e.Education)
-                .WithOne(edu => edu.Employee)
-                .HasForeignKey<EducationEntity>(edu => edu.EmployeeId);
+            modelBuilder.Entity<EducationEntity>().HasOne<EmployeeEntity>(edu => edu.Employee).WithMany(e => e.Education).HasForeignKey(edu => edu.EmployeeId);
 
-            modelBuilder.Entity<EmployeeEntity>()
-                .HasOne(e => e.Experience)
-                .WithOne(exp => exp.Employee)
-                .HasForeignKey<ExperienceEntity>(exp => exp.EmployeeId);
 
-            modelBuilder.Entity<EmployeeEntity>()
-                .HasOne(e => e.File)
-                .WithOne(f => f.Employee)
-                .HasForeignKey<FileEntity>(f => f.EmployeeId);
+            modelBuilder.Entity<ExperienceEntity>().HasOne<EmployeeEntity>(exp => exp.Employee).WithMany(e => e.Experience).HasForeignKey(exp => exp.EmployeeId);
 
+            modelBuilder.Entity<FileEntity>().HasOne<EmployeeEntity>(f => f.Employee).WithMany(e => e.File).HasForeignKey(f => f.EmployeeId);
+
+        
             modelBuilder.Entity<EmployeeEntity>()
                .HasOne(e => e.PermanentResidence)
                .WithOne(pr => pr.Employee)
@@ -66,15 +66,15 @@ namespace HRM.Infrastructure.DataAccess
                .WithOne(si => si.Employee)
                .HasForeignKey<SalaryInfoEntity>(si => si.EmployeeId);
 
-            modelBuilder.Entity<EmployeeEntity>()
-               .HasOne(e => e.AllowanceSalary)
-               .WithOne(als => als.Employee)
-               .HasForeignKey<AllowanceSalaryEntity>(als => als.EmployeeId);
 
-            modelBuilder.Entity<EmployeeEntity>()
-               .HasOne(e => e.DeductibleSalary)
-               .WithOne(ds => ds.Employee)
-               .HasForeignKey<DeductibleSalaryEntity>(ds => ds.EmployeeId);
+            modelBuilder.Entity<AllowanceSalaryEntity>().HasOne<EmployeeEntity>(als => als.Employee).WithMany(e => e.AllowanceSalary
+            ).HasForeignKey(als => als.EmployeeId);
+
+
+            modelBuilder.Entity<DeductibleSalaryEntity>().HasOne<EmployeeEntity>(dts => dts.Employee).WithMany(e => e.DeductibleSalary
+            ).HasForeignKey(dts => dts.EmployeeId);
+
+          
         }
 
         public DbSet<EmployeeEntity> Employees { get; set; }

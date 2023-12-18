@@ -10,3 +10,15 @@ C:\myapp\HRM\HRM.Core\obj\Debug\net6.0\HRM.Core.dll
 C:\myapp\HRM\HRM.Core\obj\Debug\net6.0\refint\HRM.Core.dll
 C:\myapp\HRM\HRM.Core\obj\Debug\net6.0\HRM.Core.pdb
 C:\myapp\HRM\HRM.Core\obj\Debug\net6.0\ref\HRM.Core.dll
+D:\hrmv2\HRM.Core\bin\Debug\net6.0\HRM.Core.deps.json
+D:\hrmv2\HRM.Core\bin\Debug\net6.0\HRM.Core.dll
+D:\hrmv2\HRM.Core\bin\Debug\net6.0\HRM.Core.pdb
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\HRM.Core.csproj.AssemblyReference.cache
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\HRM.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\HRM.Core.AssemblyInfoInputs.cache
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\HRM.Core.AssemblyInfo.cs
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\HRM.Core.csproj.CoreCompileInputs.cache
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\HRM.Core.dll
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\refint\HRM.Core.dll
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\HRM.Core.pdb
+D:\hrmv2\HRM.Core\obj\Debug\net6.0\ref\HRM.Core.dll

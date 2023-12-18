@@ -1,7 +1,6 @@
 using Filter.Jwt;
-using HRM.Infrastructure.DataAccess;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Middleware;
 using System.Net;
 using System.Text.Json.Serialization;
@@ -52,11 +51,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-var connectionString = builder.Configuration.GetConnectionString("connString");
-builder.Services.AddDbContext<MySQLDBContext>(options => {
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-});
 
 var app = builder.Build();
 

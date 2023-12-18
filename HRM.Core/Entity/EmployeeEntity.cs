@@ -29,15 +29,15 @@ namespace Core.Entity
         public string BankAccount { get; set; }
 
         public WorkInfoEntity WorkInfo { get; set; }
-        public EducationEntity Education { get; set; }
-        public ExperienceEntity Experience { get; set; }
-        public FileEntity File { get; set;}
+        public List<EducationEntity> Education { get; set; }
+        public List<ExperienceEntity> Experience { get; set; }
+        public List<FileEntity> File { get; set;}
         public PermanentResidenceEntity PermanentResidence { get; set; }
         public NowAddressEnity NowAddress { get; set; }
         public HometownEntity Hometown { get; set; }
         public UrgentContactEntity UrgentContact { get; set; }
         public SalaryInfoEntity SalaryInfo { get; set; }
-        public AllowanceSalaryEntity AllowanceSalary { get; set; }
-        public DeductibleSalaryEntity DeductibleSalary { get; set; }
+        public List<AllowanceSalaryEntity> AllowanceSalary { get; set; }
+        public List<DeductibleSalaryEntity> DeductibleSalary { get; set; }
     }
 }
