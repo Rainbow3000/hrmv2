@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM", "HRM\HRM.csproj", "{B20F2D39-F381-4400-9983-75E540BF6E42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Core", "HRM.Core\HRM.Core.csproj", "{3F88671A-806C-4CB3-8FE6-E11FAC4E8955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Infrastructure", "HRM.Infrastructure\HRM.Infrastructure.csproj", "{ED98467A-FCDF-457B-A19A-E90CE806CDFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B20F2D39-F381-4400-9983-75E540BF6E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20F2D39-F381-4400-9983-75E540BF6E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20F2D39-F381-4400-9983-75E540BF6E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20F2D39-F381-4400-9983-75E540BF6E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F88671A-806C-4CB3-8FE6-E11FAC4E8955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F88671A-806C-4CB3-8FE6-E11FAC4E8955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F88671A-806C-4CB3-8FE6-E11FAC4E8955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F88671A-806C-4CB3-8FE6-E11FAC4E8955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED98467A-FCDF-457B-A19A-E90CE806CDFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED98467A-FCDF-457B-A19A-E90CE806CDFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED98467A-FCDF-457B-A19A-E90CE806CDFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED98467A-FCDF-457B-A19A-E90CE806CDFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E26E9D3C-BAD1-427F-A8CA-1E8EB42097A2}
+	EndGlobalSection
+EndGlobal
