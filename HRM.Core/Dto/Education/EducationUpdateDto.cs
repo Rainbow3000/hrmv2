@@ -20,6 +20,6 @@ namespace Core.Dto.Education
         public string Degree { get; set; }
         public string Classification { get; set; }
         public string GraduationYear { get; set; }
-        public EmployeeEntity Employee { get; set; }
+  
     }
 }

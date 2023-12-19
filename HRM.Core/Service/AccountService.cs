@@ -9,16 +9,51 @@ using Microsoft.Extensions.Configuration;
 using BC = BCrypt.Net.BCrypt;
 namespace Core.Service
 {
-    public class AccountService : BaseService<Account, AccountDto, AccountCreateDto, AccountUpdateDto>, IAccountService
+    public class AccountService : IAccountService
     {
         private readonly IAccountRepository _accountRepository;
       
         private readonly IConfiguration _configuration;
-        public AccountService(IAccountRepository accountRepository, IMapper mapper, IConfiguration configuration) : base(accountRepository, mapper)
+        public AccountService(IAccountRepository accountRepository, IMapper mapper, IConfiguration configuration)
         {
             //_accountRepository = accountRepository;
             //_mapper = mapper;
             //_configuration = configuration;
+        }
+
+        public Task<int> DeleteAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<AccountDto>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<AccountDto> GetAsync(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<AccountDto> InsertAsync(AccountCreateDto entityCreateDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<dynamic> Login(AccountLogin accountLogin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<AccountDto> Register(AccountCreateDto account)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<AccountDto> UpdateAsync(AccountUpdateDto entityUpdateDto, Guid id)
+        {
+            throw new NotImplementedException();
         }
 
         //public async Task<dynamic> Login(AccountLogin accountLogin)

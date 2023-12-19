@@ -33,7 +33,7 @@ namespace Core.Entity
         public List<ExperienceEntity> Experience { get; set; }
         public List<FileEntity> File { get; set;}
         public PermanentResidenceEntity PermanentResidence { get; set; }
-        public NowAddressEnity NowAddress { get; set; }
+        public NowAddressEntity NowAddress { get; set; }
         public HometownEntity Hometown { get; set; }
         public UrgentContactEntity UrgentContact { get; set; }
         public SalaryInfoEntity SalaryInfo { get; set; }

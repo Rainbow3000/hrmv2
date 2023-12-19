@@ -2,9 +2,9 @@
 
 namespace Core.Interface.Repository
 {
-    public interface IAccountRepository : IBaseRepository<Account>
+    public interface IAccountRepository
     {
-        //Task<Account> Register(Account account);
-        //Task<Account> GetByEmailAsync(string email);
+        Task<Account> Register(Account account);
+        Task<Account> GetByEmailAsync(string email);
     }
 }

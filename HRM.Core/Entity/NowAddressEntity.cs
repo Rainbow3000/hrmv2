@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entity
 {
-    public class NowAddressEnity:BaseEntity
+    public class NowAddressEntity:BaseEntity
     {
         [Key]
         public Guid NowAddressId { get; set; }

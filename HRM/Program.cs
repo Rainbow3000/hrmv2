@@ -1,6 +1,14 @@
+using Core.Entity;
 using Filter.Jwt;
+using HRM.Core.Interface.Repository;
+using HRM.Core.Interface.Service;
+using HRM.Core.Service;
+using HRM.Infrastructure.DataAccess;
+using HRM.Infrastructure.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Middleware;
 using System.Net;
 using System.Text.Json.Serialization;
@@ -40,6 +48,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<AdminTokenFilter>();
 builder.Services.AddScoped<UserTokenFilter>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
 {
     builder.AllowAnyOrigin()
@@ -51,7 +61,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddDbContext<MySQLDBContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

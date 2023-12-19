@@ -23,16 +23,10 @@ namespace Core.Dto.Employee
     {
 
         public Guid EmployeeId { get; set; }
-
-        [Required(ErrorMessage = "Mã nhân viên không được bỏ trống")]
         public string Code { get; set; }
-
-        [Required(ErrorMessage = "Tên nhân viên không được bỏ trống")]
         public string Fullname { get; set; }
         public string Dob { get; set; }
         public string Gender { get; set; }
-
-        [Required(ErrorMessage = "Số điện thoại nhân viên không được bỏ trống")]
         public string PhoneNumber { get; set; }
         public string OrganEmail { get; set; }
         public string IdentifyType { get; set; }
@@ -46,7 +40,7 @@ namespace Core.Dto.Employee
         public string Bank { get; set; }
         public string BankAccount { get; set; }
 
-        public List<WorkInfoDto> WorkInfoDtos { get; set; }
+        public WorkInfoDto WorkInfoDto { get; set; }
         public List<EducationDto> EducationDtos { get; set; }
         public List<ExperienceDto> ExperienceDtos { get; set; }
         public List<FileDto> FileDtos { get; set; }

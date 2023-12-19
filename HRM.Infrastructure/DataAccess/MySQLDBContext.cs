@@ -1,22 +1,15 @@
 ﻿using Core.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace HRM.Infrastructure.DataAccess
 {
     public class MySQLDBContext : DbContext
     {
-        private readonly IConfiguration _configuration;
-        public IConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
-
-        public MySQLDBContext()
-        {
-            configurationBuilder.AddJsonFile("appSettings.json");
-            _configuration = configurationBuilder.Build();
-        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql(_configuration.GetConnectionString("connectString"), ServerVersion.AutoDetect(_configuration.GetConnectionString("connectString")));
+            optionsBuilder.UseMySql("Server=localhost; port=3306; User ID=root; Password=abcd; Database=hrm", ServerVersion.AutoDetect("Server=localhost; port=3306; User ID=root; Password=abcd; Database=hrm"));
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,14 +18,12 @@ namespace HRM.Infrastructure.DataAccess
             modelBuilder.Entity<EmployeeEntity>().Property(p => p.Fullname).IsRequired().HasMaxLength(100);
             modelBuilder.Entity<EmployeeEntity>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(25);
 
-
-
             modelBuilder.Entity<EmployeeEntity>()
                 .HasOne(e => e.WorkInfo)
                 .WithOne(w => w.Employee)
                 .HasForeignKey<WorkInfoEntity>(w => w.EmployeeId);
 
-            modelBuilder.Entity<EducationEntity>().HasOne<EmployeeEntity>(edu => edu.Employee).WithMany(e => e.Education).HasForeignKey(edu => edu.EmployeeId);
+            modelBuilder.Entity<EducationEntity>().HasOne<EmployeeEntity>(edu => edu.Employee).WithMany(e => e.Education).HasForeignKey(edu => edu.EmployeeId).OnDelete(DeleteBehavior.Cascade);
 
 
             modelBuilder.Entity<ExperienceEntity>().HasOne<EmployeeEntity>(exp => exp.Employee).WithMany(e => e.Experience).HasForeignKey(exp => exp.EmployeeId);
@@ -49,7 +40,7 @@ namespace HRM.Infrastructure.DataAccess
             modelBuilder.Entity<EmployeeEntity>()
                .HasOne(e => e.NowAddress)
                .WithOne(na => na.Employee)
-               .HasForeignKey<NowAddressEnity>(na => na.EmployeeId);
+               .HasForeignKey<NowAddressEntity>(na => na.EmployeeId);
 
             modelBuilder.Entity<EmployeeEntity>()
                .HasOne(e => e.Hometown)
@@ -83,7 +74,7 @@ namespace HRM.Infrastructure.DataAccess
         public DbSet<ExperienceEntity> Experiences { get; set; }
         public DbSet<FileEntity> Files { get; set; }
         public DbSet<PermanentResidenceEntity> PermanentResidences { get; set; }
-        public DbSet<NowAddressEnity> NowAddresses { get; set; }
+        public DbSet<NowAddressEntity> NowAddresses { get; set; }
         public DbSet<HometownEntity> Hometowns { get; set; }
         public DbSet<UrgentContactEntity> UrgentContacts { get; set; }
         public DbSet<SalaryInfoEntity> SalaryInfos { get; set; }

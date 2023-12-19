@@ -16,7 +16,7 @@ namespace Core.Dto.UrgentContact
         public string Fullname { get; set; }
         public string Relational { get; set; }
         public string PhoneNumber { get; set; }
-        public EmployeeEntity Employee { get; set; }
+
 
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Dto.WorkInfo
 {
-    public class WorkInfoDto:BaseDto
+    public class WorkInfoDto
     {
         public Guid WorkInfoId { get; set; }
         public Guid EmployeeId { get; set; }
@@ -20,6 +20,6 @@ namespace Core.Dto.WorkInfo
         public string TimeKeeperCode { get; set; }
         public bool IsExemptTimeKeeper { get; set; }
         public string GoogleCalendarId { get; set; }
-        public EmployeeEntity Employee { get; set; }
+ 
     }
 }

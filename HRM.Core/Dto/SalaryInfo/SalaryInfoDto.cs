@@ -19,6 +19,6 @@ namespace Core.Dto.SalaryInfo
         public string BasicSalary { get; set; }
         public string InsuranceSalary { get; set; }
         public string TotalSalary { get; set; }
-        public EmployeeEntity Employee { get; set; }
+    
     }
 }

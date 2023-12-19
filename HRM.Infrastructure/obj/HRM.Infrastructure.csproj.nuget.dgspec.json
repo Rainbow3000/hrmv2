@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj": {}
+    "C:\\app\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
+    "C:\\app\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj",
+        "projectUniqueName": "C:\\app\\hrmv2\\HRM.Core\\HRM.Core.csproj",
         "projectName": "HRM.Core",
-        "projectPath": "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj",
-        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\hrmv2\\HRM.Core\\obj\\",
+        "projectPath": "C:\\app\\hrmv2\\HRM.Core\\HRM.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\app\\hrmv2\\HRM.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,21 +73,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj": {
+    "C:\\app\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj",
+        "projectUniqueName": "C:\\app\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj",
         "projectName": "HRM.Infrastructure",
-        "projectPath": "D:\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\hrmv2\\HRM.Infrastructure\\obj\\",
+        "projectPath": "C:\\app\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\app\\hrmv2\\HRM.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,11 +101,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
-                "projectPath": "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj"
-              },
-              "D:\\hrmv2\\HRM\\HRM.csproj": {
-                "projectPath": "D:\\hrmv2\\HRM\\HRM.csproj"
+              "C:\\app\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
+                "projectPath": "C:\\app\\hrmv2\\HRM.Core\\HRM.Core.csproj"
               }
             }
           }
@@ -124,7 +121,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.*, )"
+              "version": "[7.0.0, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -147,76 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\hrmv2\\HRM\\HRM.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\hrmv2\\HRM\\HRM.csproj",
-        "projectName": "HRM",
-        "projectPath": "D:\\hrmv2\\HRM\\HRM.csproj",
-        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\hrmv2\\HRM\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
-                "projectPath": "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.2.3, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

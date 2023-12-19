@@ -33,6 +33,8 @@ namespace Core.Dto.Employee
 
         [Required(ErrorMessage = "Số điện thoại nhân viên không được bỏ trống")]
         public string PhoneNumber { get; set; }
+
+        [EmailAddress(ErrorMessage = "Emai không đúng định dạng.")]
         public string OrganEmail { get; set; }
         public string IdentifyType { get; set; }
         public string IdentifyNumber { get; set; }
@@ -41,11 +43,13 @@ namespace Core.Dto.Employee
         public string TaxtCode { get; set; }
         public string TaxtCodeDateRange { get; set; }
         public string TaxtCodeIssuedBy { get; set; }
+
+        [EmailAddress(ErrorMessage = "Emai không đúng định dạng.")]
         public string PersonalEmail { get; set; }
         public string Bank { get; set; }
         public string BankAccount { get; set; }
 
-        public List<WorkInfoCreateDto> WorkInfoDtos { get; set; }
+        public WorkInfoCreateDto  WorkInfoDto { get; set; }
         public List<EducationCreateDto> EducationDtos { get; set; }
         public List<ExperienceCreateDto> ExperienceDtos { get; set; }
         public List<FileCreateDto> FileDtos { get; set; }

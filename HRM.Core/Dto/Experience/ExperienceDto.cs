@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.Dto.Experience
 {
-    public class ExperienceDto:BaseDto
+    public class ExperienceDto
     {
         [Key]
         public Guid ExperienceId { get; set; }
@@ -20,6 +20,6 @@ namespace Core.Dto.Experience
         public string ComparePerson { get; set; }
         public bool IsCheckedCompare { get; set; }
         public string Note { get; set; }
-        public EmployeeEntity Employee { get; set; }
+       
     }
 }

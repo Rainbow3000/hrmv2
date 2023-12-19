@@ -15,7 +15,7 @@ namespace Core.Dto.DeductibleSalary
         public Guid EmployeeId { get; set; }
         public string DeductibleName { get; set; }
         public string Value { get; set; }
-        public EmployeeEntity Employee { get; set; }
+
     }
 }
 

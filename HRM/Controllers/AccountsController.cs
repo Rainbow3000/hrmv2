@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace Controllers
 {
     [ApiController]
-    public class AccountsController : BasesController<AccountDto, AccountCreateDto, AccountUpdateDto>
+    public class AccountsController 
     {
         private readonly IAccountService _accountService;
-        public AccountsController(IAccountService accountService) : base(accountService)
+        public AccountsController(IAccountService accountService)
         {
             _accountService = accountService;
        

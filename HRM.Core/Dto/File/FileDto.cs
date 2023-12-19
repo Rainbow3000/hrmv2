@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.Dto.File
 {
-    public class FileDto:BaseDto
+    public class FileDto
     {
         [Key]
         public Guid FileId { get; set; }
@@ -16,6 +16,6 @@ namespace Core.Dto.File
         public string FileName { get; set; }
         public string UploadDate { get; set; }
         public string FileUrl { get; set; }
-        public EmployeeEntity Employee { get; set; }
+
     }
 }

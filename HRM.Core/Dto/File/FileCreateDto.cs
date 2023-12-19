@@ -16,6 +16,6 @@ namespace Core.Dto.File
         public string FileName { get; set; }
         public string UploadDate { get; set; }
         public string FileUrl { get; set; }
-        public EmployeeEntity Employee { get; set; }
+
     }
 }

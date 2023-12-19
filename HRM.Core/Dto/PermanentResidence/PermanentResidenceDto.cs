@@ -17,6 +17,6 @@ namespace Core.Dto.PermanentResidence
         public string District { get; set; }
         public string Wards { get; set; }
         public string HouseNumber { get; set; }
-        public EmployeeEntity Employee { get; set; }
+     
     }
 }

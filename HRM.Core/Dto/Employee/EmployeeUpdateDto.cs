@@ -20,7 +20,6 @@ namespace Core.Dto.Employee
 {
     public class EmployeeUpdateDto
     {
-        public Guid EmployeeId { get; set; }
 
         [Required(ErrorMessage = "Mã nhân viên không được bỏ trống")]
         public string Code { get; set; }
@@ -32,6 +31,8 @@ namespace Core.Dto.Employee
 
         [Required(ErrorMessage = "Số điện thoại nhân viên không được bỏ trống")]
         public string PhoneNumber { get; set; }
+
+        [EmailAddress(ErrorMessage = "Emai không đúng định dạng.")]
         public string OrganEmail { get; set; }
         public string IdentifyType { get; set; }
         public string IdentifyNumber { get; set; }
@@ -40,11 +41,13 @@ namespace Core.Dto.Employee
         public string TaxtCode { get; set; }
         public string TaxtCodeDateRange { get; set; }
         public string TaxtCodeIssuedBy { get; set; }
+
+        [EmailAddress(ErrorMessage = "Emai không đúng định dạng.")]
         public string PersonalEmail { get; set; }
         public string Bank { get; set; }
         public string BankAccount { get; set; }
 
-        public List<WorkInfoUpdateDto> WorkInfoDtos { get; set; }
+        public WorkInfoUpdateDto WorkInfoDto { get; set; }
         public List<EducationUpdateDto> EducationDtos { get; set; }
         public List<ExperienceUpdateDto> ExperienceDtos { get; set; }
         public List<FileUpdateDto> FileDtos { get; set; }

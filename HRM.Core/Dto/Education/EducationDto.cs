@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.Dto.Education
 {
-    public class EducationDto:BaseDto
+    public class EducationDto
     {
         [Key]
         public Guid EducationId { get; set; }
@@ -20,6 +20,6 @@ namespace Core.Dto.Education
         public string Degree { get; set; }
         public string Classification { get; set; }
         public string GraduationYear { get; set; }
-        public EmployeeEntity Employee { get; set; }
+
     }
 }

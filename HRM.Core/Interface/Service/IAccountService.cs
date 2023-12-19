@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Core.Interface.Service
 {
-    public interface IAccountService : IBaseService<AccountDto, AccountCreateDto, AccountUpdateDto>
+    public interface IAccountService
     {
-        //Task<dynamic> Login(AccountLogin accountLogin);
-        //Task<AccountDto> Register(AccountCreateDto account);
+        Task<dynamic> Login(AccountLogin accountLogin);
+        Task<AccountDto> Register(AccountCreateDto account);
     }
 }
