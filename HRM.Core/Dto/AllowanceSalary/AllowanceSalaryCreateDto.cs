@@ -13,8 +13,8 @@ namespace Core.Dto.AllowanceSalary
         [Key]
         public Guid AllowanceSalaryId { get; set; }
         public Guid EmployeeId { get; set; }
-        public string AllowanceName { get; set; }
-        public string Value { get; set; }
+        public string? AllowanceName { get; set; }
+        public string? Value { get; set; }
 
 
     }

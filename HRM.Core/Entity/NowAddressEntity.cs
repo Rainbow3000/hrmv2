@@ -12,10 +12,10 @@ namespace Core.Entity
         [Key]
         public Guid NowAddressId { get; set; }
         public Guid EmployeeId { get; set; }
-        public string City { get; set; }
-        public string District { get; set; }
-        public string Wards { get; set; }
-        public string HouseNumber { get; set; }
+        public string? City { get; set; }
+        public string? District { get; set; }
+        public string? Wards { get; set; }
+        public string? HouseNumber { get; set; }
         public EmployeeEntity Employee { get; set; }
     }
 }

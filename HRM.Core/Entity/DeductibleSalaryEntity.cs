@@ -12,8 +12,8 @@ namespace Core.Entity
         [Key]
         public Guid DeductibleSalaryId { get; set; }
         public Guid EmployeeId { get; set; }
-        public string DeductibleName { get; set; }
-        public string Value { get; set; }
+        public string? DeductibleName { get; set; }
+        public string? Value { get; set; }
         public EmployeeEntity Employee { get; set; }
     }
 }

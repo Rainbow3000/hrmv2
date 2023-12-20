@@ -1,5 +1,9 @@
 using Core.Entity;
+using Core.Interface.Repository;
+using Core.Interface.Service;
+using Core.Service;
 using Filter.Jwt;
+using HomeFinder.Infrastructure.Repository;
 using HRM.Core.Interface.Repository;
 using HRM.Core.Interface.Service;
 using HRM.Core.Service;
@@ -48,6 +52,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<AdminTokenFilter>();
 builder.Services.AddScoped<UserTokenFilter>();
+builder.Services.AddScoped<IAccountRepository,AccountRepository>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>

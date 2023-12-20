@@ -13,9 +13,9 @@ namespace Core.Dto.File
         [Key]
         public Guid FileId { get; set; }
         public Guid EmployeeId { get; set; }
-        public string FileName { get; set; }
-        public string UploadDate { get; set; }
-        public string FileUrl { get; set; }
+        public string? FileName { get; set; }
+        public string? UploadDate { get; set; }
+        public string? FileUrl { get; set; }
 
     }
 }

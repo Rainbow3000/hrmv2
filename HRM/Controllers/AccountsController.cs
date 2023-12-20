@@ -17,19 +17,19 @@ namespace Controllers
        
         }
 
-        //[HttpPost("Register")]
-        //public async Task<DataResponse> Register([FromBody] AccountCreateDto accountCreateDto)
-        //{
-        //    var account = await _accountService.Register(accountCreateDto);
-        //    return new DataResponse(account, StatusCodes.Status201Created); 
-        //}
+        [HttpPost("Register")]
+        public async Task<DataResponse> Register([FromBody] AccountCreateDto accountCreateDto)
+        {
+            var account = await _accountService.Register(accountCreateDto);
+            return new DataResponse(account, StatusCodes.Status201Created);
+        }
 
-        //[HttpPost("Login")]
-        //public async Task<DataResponse> Login([FromBody] AccountLogin accountLogin)
-        //{
-        //    var account = await _accountService.Login(accountLogin);
-        //    return new DataResponse(account, StatusCodes.Status200OK);
-        //}
+        [HttpPost("Login")]
+        public async Task<DataResponse> Login([FromBody] AccountLoginDto accountLogin)
+        {
+            var account = await _accountService.Login(accountLogin);
+            return new DataResponse(account, StatusCodes.Status200OK);
+        }
 
         //[ServiceFilter(typeof(AdminTokenFilter))]
         //public override Task<DataResponse> GetAllAsync()

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Enum
+namespace HRM.Core.Enum
 {
-    public enum WorkStatus
+    public enum Bank
     {
-       On = 1, 
-       Off = 2
+        Techcombank = 1,
+        BIDV = 2
     }
 }

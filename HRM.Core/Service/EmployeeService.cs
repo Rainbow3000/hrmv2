@@ -13,12 +13,15 @@ using Core.Dto.UrgentContact;
 using Core.Dto.WorkInfo;
 using Core.Entity;
 using Core.Exceptions;
+using Core.Interface.Repository;
+using HRM.Core.Helper;
 using HRM.Core.Interface.Repository;
 using HRM.Core.Interface.Service;
 using HRM.Core.Mapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,9 +30,11 @@ namespace HRM.Core.Service
     public class EmployeeService:IEmployeeService
     {
         private readonly IEmployeeRepository  _employeeRepository;
+        private readonly IAccountRepository _accountRepository; 
         private readonly IMapper _mapper;
-        public EmployeeService(IEmployeeRepository employeeRepository, IMapper mapper) {
-            _employeeRepository = employeeRepository; 
+        public EmployeeService(IEmployeeRepository employeeRepository, IAccountRepository accountRepository, IMapper mapper) {
+            _employeeRepository = employeeRepository;
+            _accountRepository = accountRepository; 
             _mapper = mapper;
         }
         public async Task<int> DeleteAsync(Guid id)

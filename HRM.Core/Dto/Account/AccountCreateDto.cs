@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace Core.Dto.Account
 {
-    public class AccountCreateDto:BaseDto
+    public class AccountCreateDto
     {
+        [Key]
         public Guid AccountId { get; set; }
+        public Guid EmployeeId { get; set; }
 
-        [EmailAddress(ErrorMessage = "Emai không đúng định dạng.")]
-        public string Email { get; set; }
+        [Required(ErrorMessage = "Tên tài khoản không được để trống")]
+        public string UserName { get; set; }
         public string Password { get; set; }
-        public string? Role { get; set; }
+        public string Role { get; set; }
         public int Status { get; set; }
     }
 }

@@ -13,8 +13,8 @@ namespace Core.Dto.DeductibleSalary
         [Key]
         public Guid DeductibleSalaryId { get; set; }
         public Guid EmployeeId { get; set; }
-        public string DeductibleName { get; set; }
-        public string Value { get; set; }
+        public string? DeductibleName { get; set; }
+        public string? Value { get; set; }
 
     }
 }

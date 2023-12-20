@@ -13,9 +13,9 @@ namespace Core.Mapper
     {
         public AccountProfile()
         {
-            CreateMap<Account, AccountDto>();
-            CreateMap<AccountUpdateDto, Account>();
-            CreateMap<AccountCreateDto,Account>();
+            CreateMap<AccountEntity, AccountDto>();
+            CreateMap<AccountUpdateDto, AccountEntity>();
+            CreateMap<AccountCreateDto,AccountEntity>();
         }
     }
 }

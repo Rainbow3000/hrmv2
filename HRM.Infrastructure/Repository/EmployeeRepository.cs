@@ -49,7 +49,6 @@ namespace HRM.Infrastructure.Repository
 
         public async Task<EmployeeEntity> GetAsync(Guid id)
         {
-            var employeeEntity = new EmployeeEntity();
             var employeeExisted = await _dbContext.Employees.Include(e => e.WorkInfo)
                 .Include(e => e.Education)
                 .Include(e => e.Experience)
@@ -60,12 +59,9 @@ namespace HRM.Infrastructure.Repository
                 .Include(e => e.UrgentContact)
                 .Include(e => e.SalaryInfo)
                 .Include(e => e.AllowanceSalary)
-                .Include(e => e.DeductibleSalary).FirstAsync(e => e.EmployeeId == id);
-            if(employeeExisted != null)
-            {
-                employeeEntity = employeeExisted; 
-            }
-            return employeeEntity;
+                .Include(e => e.DeductibleSalary).FirstOrDefaultAsync(e => e.EmployeeId == id);
+           
+            return employeeExisted;
         }
 
         public async Task<int> InsertAsync(EmployeeEntity employeeEntity)
@@ -88,7 +84,7 @@ namespace HRM.Infrastructure.Repository
                  .Include(e => e.UrgentContact)
                  .Include(e => e.SalaryInfo)
                  .Include(e => e.AllowanceSalary)
-                 .Include(e => e.DeductibleSalary).FirstAsync(e => e.EmployeeId == id);
+                 .Include(e => e.DeductibleSalary).FirstOrDefaultAsync(e => e.EmployeeId == id);
             if (employeeUpdate != null)
             {
                 employeeUpdate.Code = employeeEntity.Code;

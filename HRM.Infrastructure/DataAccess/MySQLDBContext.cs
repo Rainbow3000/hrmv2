@@ -14,6 +14,8 @@ namespace HRM.Infrastructure.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            modelBuilder.Entity<AccountEntity>().HasIndex(a => a.UserName).IsUnique(); 
+
             modelBuilder.Entity<EmployeeEntity>().Property(p => p.Code).IsRequired().HasMaxLength(100); 
             modelBuilder.Entity<EmployeeEntity>().Property(p => p.Fullname).IsRequired().HasMaxLength(100);
             modelBuilder.Entity<EmployeeEntity>().Property(p => p.PhoneNumber).IsRequired().HasMaxLength(25);
@@ -57,6 +59,11 @@ namespace HRM.Infrastructure.DataAccess
                .WithOne(si => si.Employee)
                .HasForeignKey<SalaryInfoEntity>(si => si.EmployeeId);
 
+            modelBuilder.Entity<EmployeeEntity>()
+              .HasOne(e => e.Account)
+              .WithOne(a => a.Employee)
+              .HasForeignKey<AccountEntity>(a => a.EmployeeId);
+
 
             modelBuilder.Entity<AllowanceSalaryEntity>().HasOne<EmployeeEntity>(als => als.Employee).WithMany(e => e.AllowanceSalary
             ).HasForeignKey(als => als.EmployeeId);
@@ -67,7 +74,7 @@ namespace HRM.Infrastructure.DataAccess
 
           
         }
-
+        public DbSet<AccountEntity> Accounts { get; set; }
         public DbSet<EmployeeEntity> Employees { get; set; }
         public DbSet<WorkInfoEntity> WorkInfos   { get; set; }
         public DbSet<EducationEntity> Educations { get; set; }

@@ -20,7 +20,7 @@ namespace Core.Helper
             _configuration = configuration; 
         }
 
-        public string GenerateToken(Account account)
+        public string GenerateToken(AccountEntity account)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
 
@@ -29,7 +29,7 @@ namespace Core.Helper
             var tokenDescription = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.Email, account.Email),
+                    new Claim("userName", account.UserName),
                     new Claim("accountId", account.AccountId.ToString()),
                     new Claim("role", account.Role.ToString())
                 }),

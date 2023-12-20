@@ -4,7 +4,7 @@ namespace Core.Interface.Repository
 {
     public interface IAccountRepository
     {
-        Task<Account> Register(Account account);
-        Task<Account> GetByEmailAsync(string email);
+        Task<int> Register(AccountEntity account);
+        Task<AccountEntity> GetByUserNameAsync(string userName);
     }
 }

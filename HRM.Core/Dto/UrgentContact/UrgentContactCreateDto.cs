@@ -13,9 +13,9 @@ namespace Core.Dto.UrgentContact
         [Key]
         public Guid UrgentContactId { get; set; }
         public Guid EmployeeId { get; set; }
-        public string Fullname { get; set; }
-        public string Relational { get; set; }
-        public string PhoneNumber { get; set; }
+        public string? Fullname { get; set; }
+        public string? Relational { get; set; }
+        public string? PhoneNumber { get; set; }
 
 
     }

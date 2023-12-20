@@ -10,6 +10,8 @@ using Core.Dto.SalaryInfo;
 using Core.Dto.UrgentContact;
 using Core.Dto.WorkInfo;
 using Core.Entity;
+using Core.Enum;
+using HRM.Core.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,9 +26,9 @@ namespace Core.Dto.Employee
 
         public Guid EmployeeId { get; set; }
         public string Code { get; set; }
-        public string Fullname { get; set; }
+        public string FullName { get; set; }
         public string Dob { get; set; }
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         public string PhoneNumber { get; set; }
         public string OrganEmail { get; set; }
         public string IdentifyType { get; set; }
@@ -37,7 +39,7 @@ namespace Core.Dto.Employee
         public string TaxtCodeDateRange { get; set; }
         public string TaxtCodeIssuedBy { get; set; }
         public string PersonalEmail { get; set; }
-        public string Bank { get; set; }
+        public Bank Bank { get; set; }
         public string BankAccount { get; set; }
 
         public WorkInfoDto WorkInfoDto { get; set; }

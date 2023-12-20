@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Enum
+namespace HRM.Core.Enum
 {
-    public enum WorkStatus
+    public enum IdentifyType
     {
-       On = 1, 
-       Off = 2
+        CCCD = 1,
+        CMND = 2
     }
 }

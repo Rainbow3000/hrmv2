@@ -10,7 +10,7 @@ namespace Core.Interface.Service
 {
     public interface IAccountService
     {
-        Task<dynamic> Login(AccountLogin accountLogin);
+        Task<dynamic> Login(AccountLoginDto accountLogin);
         Task<AccountDto> Register(AccountCreateDto account);
     }
 }
