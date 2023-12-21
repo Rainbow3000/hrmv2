@@ -14,7 +14,7 @@ namespace Core.Dto.AllowanceSalary
         public Guid AllowanceSalaryId { get; set; }
         public Guid EmployeeId { get; set; }
         public string AllowanceName { get; set; }
-        public string Value { get; set; }
+        public double Value { get; set; }
      
 
     }

@@ -4,6 +4,7 @@ using HRM.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -62,6 +63,12 @@ namespace HRM.Infrastructure.Repository
                 .Include(e => e.DeductibleSalary).FirstOrDefaultAsync(e => e.EmployeeId == id);
            
             return employeeExisted;
+        }
+
+        public async Task<EmployeeEntity> getByCode(string code)
+        {
+            var data =  await _dbContext.Employees.FirstOrDefaultAsync(e => e.Code == code);
+            return data;
         }
 
         public async Task<int> InsertAsync(EmployeeEntity employeeEntity)

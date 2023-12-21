@@ -23,8 +23,7 @@ namespace HRM.Infrastructure.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Fullname = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Dob = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Dob = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     Gender = table.Column<int>(type: "int", nullable: true),
                     PhoneNumber = table.Column<string>(type: "varchar(25)", maxLength: 25, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -101,8 +100,7 @@ namespace HRM.Infrastructure.Migrations
                     EmployeeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     AllowanceName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Value = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Value = table.Column<double>(type: "double", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -130,8 +128,7 @@ namespace HRM.Infrastructure.Migrations
                     EmployeeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     DeductibleName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Value = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Value = table.Column<double>(type: "double", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -157,13 +154,11 @@ namespace HRM.Infrastructure.Migrations
                 {
                     EducationId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     EmployeeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    FromYear = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ToYear = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    FromYear = table.Column<int>(type: "int", nullable: true),
+                    ToYear = table.Column<int>(type: "int", nullable: true),
                     EducationPlace = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Specification = table.Column<string>(type: "longtext", nullable: true)
+                    Specialized = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Degree = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -366,16 +361,11 @@ namespace HRM.Infrastructure.Migrations
                     EmployeeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     LevelSalary = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LrossSalary = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    NetSalary = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    BasicSalary = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    InsuranceSalary = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    TotalSalary = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    GrossSalary = table.Column<double>(type: "double", nullable: true),
+                    NetSalary = table.Column<double>(type: "double", nullable: true),
+                    BasicSalary = table.Column<double>(type: "double", nullable: true),
+                    InsuranceSalary = table.Column<double>(type: "double", nullable: true),
+                    TotalSalary = table.Column<double>(type: "double", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -401,7 +391,7 @@ namespace HRM.Infrastructure.Migrations
                 {
                     UrgentContactId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     EmployeeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    Fullname = table.Column<string>(type: "longtext", nullable: true)
+                    FullName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Relational = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -436,7 +426,7 @@ namespace HRM.Infrastructure.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UnitId = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    managerId = table.Column<string>(type: "longtext", nullable: true)
+                    ManagerId = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Status = table.Column<int>(type: "int", nullable: true),
                     ContractType = table.Column<int>(type: "int", nullable: true),

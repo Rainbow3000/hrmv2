@@ -14,7 +14,7 @@ namespace Core.Entity
         public Guid EmployeeId { get;set; }
         public string? PositionId { get;set; }
         public string? UnitId { get;set; }
-        public string? managerId { get;set; }
+        public string? ManagerId { get;set; }
         public Enum.WorkStatus? Status { get;set; }
         public Enum.ContractType? ContractType { get;set; }
         public Enum.WorkType? WorkType { get;set; }

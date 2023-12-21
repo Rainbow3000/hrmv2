@@ -28,7 +28,7 @@ namespace Core.Dto.Employee
 
         [Required(ErrorMessage = "Tên nhân viên không được bỏ trống")]
         public string FullName { get; set; }
-        public string? Dob { get; set; }
+        public DateTime? Dob { get; set; }
         public Gender? Gender { get; set; }
 
         [Required(ErrorMessage = "Số điện thoại nhân viên không được bỏ trống")]

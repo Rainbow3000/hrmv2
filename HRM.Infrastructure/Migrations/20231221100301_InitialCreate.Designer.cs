@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRM.Infrastructure.Migrations
 {
     [DbContext(typeof(MySQLDBContext))]
-    [Migration("20231220110801_InitialCreate")]
+    [Migration("20231221100301_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -93,8 +93,8 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Value")
-                        .HasColumnType("longtext");
+                    b.Property<double?>("Value")
+                        .HasColumnType("double");
 
                     b.HasKey("AllowanceSalaryId");
 
@@ -127,8 +127,8 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Value")
-                        .HasColumnType("longtext");
+                    b.Property<double?>("Value")
+                        .HasColumnType("double");
 
                     b.HasKey("DeductibleSalaryId");
 
@@ -161,8 +161,8 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<Guid>("EmployeeId")
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("FromYear")
-                        .HasColumnType("longtext");
+                    b.Property<int?>("FromYear")
+                        .HasColumnType("int");
 
                     b.Property<string>("GraduationYear")
                         .HasColumnType("longtext");
@@ -173,11 +173,11 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Specification")
+                    b.Property<string>("Specialized")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("ToYear")
-                        .HasColumnType("longtext");
+                    b.Property<int?>("ToYear")
+                        .HasColumnType("int");
 
                     b.HasKey("EducationId");
 
@@ -209,8 +209,8 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Dob")
-                        .HasColumnType("longtext");
+                    b.Property<DateTime?>("Dob")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Fullname")
                         .IsRequired()
@@ -478,8 +478,8 @@ namespace HRM.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("BasicSalary")
-                        .HasColumnType("longtext");
+                    b.Property<double?>("BasicSalary")
+                        .HasColumnType("double");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("longtext");
@@ -490,13 +490,13 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<Guid>("EmployeeId")
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("InsuranceSalary")
-                        .HasColumnType("longtext");
+                    b.Property<double?>("GrossSalary")
+                        .HasColumnType("double");
+
+                    b.Property<double?>("InsuranceSalary")
+                        .HasColumnType("double");
 
                     b.Property<string>("LevelSalary")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("LrossSalary")
                         .HasColumnType("longtext");
 
                     b.Property<string>("ModifiedBy")
@@ -505,11 +505,11 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("NetSalary")
-                        .HasColumnType("longtext");
+                    b.Property<double?>("NetSalary")
+                        .HasColumnType("double");
 
-                    b.Property<string>("TotalSalary")
-                        .HasColumnType("longtext");
+                    b.Property<double?>("TotalSalary")
+                        .HasColumnType("double");
 
                     b.HasKey("SalaryInfoId");
 
@@ -534,7 +534,7 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<Guid>("EmployeeId")
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("Fullname")
+                    b.Property<string>("FullName")
                         .HasColumnType("longtext");
 
                     b.Property<string>("ModifiedBy")
@@ -581,6 +581,9 @@ namespace HRM.Infrastructure.Migrations
                     b.Property<bool?>("IsExemptTimeKeeper")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("ManagerId")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("longtext");
 
@@ -601,9 +604,6 @@ namespace HRM.Infrastructure.Migrations
 
                     b.Property<int?>("WorkType")
                         .HasColumnType("int");
-
-                    b.Property<string>("managerId")
-                        .HasColumnType("longtext");
 
                     b.HasKey("WorkInfoId");
 

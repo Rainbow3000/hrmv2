@@ -13,12 +13,12 @@ namespace Core.Dto.SalaryInfo
         [Key]
         public Guid SalaryInfoId { get; set; }
         public Guid EmployeeId { get; set; }
-        public string LevelSalary { get; set; }
-        public string LrossSalary { get; set; }
-        public string NetSalary { get; set; }
-        public string BasicSalary { get; set; }
-        public string InsuranceSalary { get; set; }
-        public string TotalSalary { get; set; }
-    
+        public string? LevelSalary { get; set; }
+        public double? grossSalary { get; set; }
+        public double? NetSalary { get; set; }
+        public double? BasicSalary { get; set; }
+        public double? InsuranceSalary { get; set; }
+        public double? TotalSalary { get; set; }
+
     }
 }

@@ -29,7 +29,7 @@ namespace Core.Dto.Employee
 
         [Required(ErrorMessage = "Tên nhân viên không được bỏ trống")]
         public string FullName { get; set; }
-        public string? Dob { get; set; }
+        public DateTime? Dob { get; set; }
         public Gender? Gender { get; set; }
 
         [Required(ErrorMessage = "Số điện thoại nhân viên không được bỏ trống")]
@@ -50,16 +50,16 @@ namespace Core.Dto.Employee
         public Bank? Bank { get; set; }
         public string? BankAccount { get; set; }
 
-        public WorkInfoCreateDto  WorkInfoDto { get; set; }
-        public List<EducationCreateDto> EducationDtos { get; set; }
-        public List<ExperienceCreateDto> ExperienceDtos { get; set; }
+        public WorkInfoCreateDto?  WorkInfoDto { get; set; }
+        public List<EducationCreateDto>? EducationDtos { get; set; }
+        public List<ExperienceCreateDto>? ExperienceDtos { get; set; }
         public List<FileCreateDto>? FileDtos { get; set; }
-        public PermanentResidenceCreateDto PermanentResidenceDto { get; set; }
-        public NowAddressCreateDto NowAddressDto { get; set; }
-        public HometownCreateDto HometownDto { get; set; }
-        public UrgentContactCreateDto UrgentContactDto { get; set; }
-        public SalaryInfoCreateDto SalaryInfoDto { get; set; }
-        public List<AllowanceSalaryCreateDto> AllowanceSalaryDtos { get; set; }
-        public List<DeductibleSalaryCreateDto> DeductibleSalaryDtos { get; set; }
+        public PermanentResidenceCreateDto? PermanentResidenceDto { get; set; }
+        public NowAddressCreateDto? NowAddressDto { get; set; }
+        public HometownCreateDto? HometownDto { get; set; }
+        public UrgentContactCreateDto? UrgentContactDto { get; set; }
+        public SalaryInfoCreateDto? SalaryInfoDto { get; set; }
+        public List<AllowanceSalaryCreateDto>? AllowanceSalaryDtos { get; set; }
+        public List<DeductibleSalaryCreateDto>? DeductibleSalaryDtos { get; set; }
     }
 }

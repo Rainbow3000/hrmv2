@@ -233,6 +233,13 @@ namespace HRM.Core.Service
         public async Task<EmployeeDto> InsertAsync(EmployeeCreateDto employeeCreateDto)
         {
             // Map từ EntityCreateDto thành Entity
+
+            var employeeExisted = await _employeeRepository.getByCode(employeeCreateDto.Code);
+
+            if (employeeExisted != null) {
+                throw new DuplicateException("Mã nhân viên đã tồn tại");
+            }
+
             var workInfoEntity = _mapper.Map<WorkInfoEntity>(employeeCreateDto.WorkInfoDto);
             List<EducationEntity> educationEntities = _mapper.Map<List<EducationEntity>>(employeeCreateDto.EducationDtos);
             List<ExperienceEntity> experienceEntities = _mapper.Map<List<ExperienceEntity>>(employeeCreateDto.ExperienceDtos);
@@ -305,37 +312,40 @@ namespace HRM.Core.Service
             employeeEntity.DeductibleSalary= deductibleSalaryEntities;
 
             // Ghi dữ liệu vào database
-            await _employeeRepository.InsertAsync(employeeEntity);
+            int rowEffected = await _employeeRepository.InsertAsync(employeeEntity);
+            if(rowEffected > 0) {
 
-            // Map từ Entity về EntityDto
-            var workInfoDto = _mapper.Map<WorkInfoDto>(workInfoEntity);
-            List<EducationDto> educationDtos = _mapper.Map<List<EducationDto>>(educationEntities);
-            List<ExperienceDto> experienceDtos = _mapper.Map<List<ExperienceDto>>(experienceEntities);
-            List<FileDto> fileDtos  = _mapper.Map<List<FileDto>>(fileEntities);
-            var permanentResidenceDto = _mapper.Map<PermanentResidenceDto>(permanentResidenceEntity);
-            var nowAddressDto = _mapper.Map<NowAddressDto>(nowAddressEntity);
-            var hometownDto = _mapper.Map<HometownDto>(hometownEntity);
-            var urgentContactDto = _mapper.Map<UrgentContactDto>(urgentContactEntity);
-            var salaryInfoDto = _mapper.Map<SalaryInfoDto>(salaryInfoEntity);
-            List<AllowanceSalaryDto> allowanceSalaryDtos = _mapper.Map<List<AllowanceSalaryDto>>(allowanceSalaryEntities);
-            List<DeductibleSalaryDto> deductibleSalaryDtos = _mapper.Map<List<DeductibleSalaryDto>>(deductibleSalaryEntities);
+                // Map từ Entity về EntityDto
+                var workInfoDto = _mapper.Map<WorkInfoDto>(workInfoEntity);
+                List<EducationDto> educationDtos = _mapper.Map<List<EducationDto>>(educationEntities);
+                List<ExperienceDto> experienceDtos = _mapper.Map<List<ExperienceDto>>(experienceEntities);
+                List<FileDto> fileDtos  = _mapper.Map<List<FileDto>>(fileEntities);
+                var permanentResidenceDto = _mapper.Map<PermanentResidenceDto>(permanentResidenceEntity);
+                var nowAddressDto = _mapper.Map<NowAddressDto>(nowAddressEntity);
+                var hometownDto = _mapper.Map<HometownDto>(hometownEntity);
+                var urgentContactDto = _mapper.Map<UrgentContactDto>(urgentContactEntity);
+                var salaryInfoDto = _mapper.Map<SalaryInfoDto>(salaryInfoEntity);
+                List<AllowanceSalaryDto> allowanceSalaryDtos = _mapper.Map<List<AllowanceSalaryDto>>(allowanceSalaryEntities);
+                List<DeductibleSalaryDto> deductibleSalaryDtos = _mapper.Map<List<DeductibleSalaryDto>>(deductibleSalaryEntities);
 
-            // Add các entityDto vào các trường của employeeDto tương ứng
-            var employeeDto =  _mapper.Map<EmployeeDto>(employeeEntity);
-            employeeDto.WorkInfoDto = workInfoDto;
-            employeeDto.EducationDtos = educationDtos;
-            employeeDto.ExperienceDtos = experienceDtos; 
-            employeeDto.FileDtos =  fileDtos;
-            employeeDto.PermanentResidenceDto = permanentResidenceDto;
-            employeeDto.NowAddressDto = nowAddressDto;
-            employeeDto.HometownDto = hometownDto; 
-            employeeDto.UrgentContactDto = urgentContactDto;
-            employeeDto.SalaryInfoDto = salaryInfoDto;
-            employeeDto.AllowanceSalaryDtos = allowanceSalaryDtos;
-            employeeDto.DeductibleSalaryDtos = deductibleSalaryDtos;
+                // Add các entityDto vào các trường của employeeDto tương ứng
+                var employeeDto =  _mapper.Map<EmployeeDto>(employeeEntity);
+                employeeDto.WorkInfoDto = workInfoDto;
+                employeeDto.EducationDtos = educationDtos;
+                employeeDto.ExperienceDtos = experienceDtos; 
+                employeeDto.FileDtos =  fileDtos;
+                employeeDto.PermanentResidenceDto = permanentResidenceDto;
+                employeeDto.NowAddressDto = nowAddressDto;
+                employeeDto.HometownDto = hometownDto; 
+                employeeDto.UrgentContactDto = urgentContactDto;
+                employeeDto.SalaryInfoDto = salaryInfoDto;
+                employeeDto.AllowanceSalaryDtos = allowanceSalaryDtos;
+                employeeDto.DeductibleSalaryDtos = deductibleSalaryDtos;
 
-            return employeeDto; 
+                return employeeDto; 
+            }
 
+            throw new Exception("Có lỗi xảy ra");
 
         }
 
@@ -345,6 +355,11 @@ namespace HRM.Core.Service
             if(employeeExisted == null)
             {
                 throw new NotFoundException("Nhân viên không tồn tại");
+            }
+
+            if(employeeExisted.Code == employeeUpdateDto.Code)
+            {
+                throw new DuplicateException("Mã nhân viên đã tồn tại");
             }
 
             // Map từ EntityUpdateDto thành Entity
