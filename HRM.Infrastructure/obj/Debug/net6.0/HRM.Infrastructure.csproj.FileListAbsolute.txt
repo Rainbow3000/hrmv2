@@ -34,13 +34,6 @@ D:\hrmv2\HRM.Infrastructure\obj\Debug\net6.0\refint\HRM.Infrastructure.dll
 D:\hrmv2\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.pdb
 D:\hrmv2\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.genruntimeconfig.cache
 D:\hrmv2\HRM.Infrastructure\obj\Debug\net6.0\ref\HRM.Infrastructure.dll
-D:\hrmv2\HRM.Infrastructure\bin\Debug\net6.0\HRM.deps.json
-D:\hrmv2\HRM.Infrastructure\bin\Debug\net6.0\HRM.runtimeconfig.json
-D:\hrmv2\HRM.Infrastructure\bin\Debug\net6.0\appsettings.Development.json
-D:\hrmv2\HRM.Infrastructure\bin\Debug\net6.0\appsettings.json
-D:\hrmv2\HRM.Infrastructure\bin\Debug\net6.0\HRM.exe
-D:\hrmv2\HRM.Infrastructure\bin\Debug\net6.0\HRM.dll
-D:\hrmv2\HRM.Infrastructure\bin\Debug\net6.0\HRM.pdb
 C:\app\hrmv2\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.csproj.AssemblyReference.cache
 C:\app\hrmv2\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\app\hrmv2\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.AssemblyInfoInputs.cache

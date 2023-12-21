@@ -2,6 +2,7 @@
 using Core.DataResponse;
 using Core.Dto.Employee;
 using Core.Interface.Service;
+using Filter.Jwt;
 using HRM.Core.Interface.Repository;
 using HRM.Core.Interface.Service;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +21,7 @@ namespace HRM.Controllers
         }
 
         [HttpGet]
+        [ServiceFilter(typeof(UserTokenFilter))]
         public virtual async Task<DataResponse> GetAllAsync()
         {
             var entities = await _employeeService.GetAllAsync();
@@ -27,6 +29,8 @@ namespace HRM.Controllers
         }
 
         [HttpGet("{id}")]
+        [ServiceFilter(typeof(AdminTokenFilter))]
+        [ServiceFilter(typeof(UserTokenFilter))]
         public virtual async Task<DataResponse> GetAsync(Guid id)
         {
             var entities = await _employeeService.GetAsync(id);
@@ -34,12 +38,14 @@ namespace HRM.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(AdminTokenFilter))]
         public virtual async Task<DataResponse> InsertAsync(EmployeeCreateDto employeeCreateDto)
         {
             var employeeDto = await _employeeService.InsertAsync(employeeCreateDto);
             return new DataResponse(employeeDto, StatusCodes.Status200OK);
         }
         [HttpPut("{id}")]
+        [ServiceFilter(typeof(AdminTokenFilter))]
         public virtual async Task<DataResponse> UpdateAsync(EmployeeUpdateDto employeeUpdateDto,Guid id )
         {
             var employeeDto = await _employeeService.UpdateAsync(employeeUpdateDto,id);
@@ -47,6 +53,7 @@ namespace HRM.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ServiceFilter(typeof(AdminTokenFilter))]
         public virtual async Task<DataResponse> DeleteAsync(Guid id)
         {
             var employeeDto = await _employeeService.DeleteAsync(id);

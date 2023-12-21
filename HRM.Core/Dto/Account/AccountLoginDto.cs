@@ -12,7 +12,8 @@ namespace Core.Dto.Account
         [Required(ErrorMessage = "Tên người dùng không được bỏ trống")]
         public string UserName  { get; set; }
 
-        [Required(ErrorMessage = "Mật khẩu không đúng định dạng")]
+        [Required(ErrorMessage = "Mật khẩu không được bỏ trống")]
+        [MinLength(6,ErrorMessage = "Mật khẩu không được ít hơn 6 ký tự")]
         public string Password { get; set; }
     }
 }

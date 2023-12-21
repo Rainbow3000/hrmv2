@@ -47,6 +47,7 @@ namespace Core.Service
                 Success = true,
                 UserName = accountExist.UserName,
                 AccountId = accountExist.AccountId,
+                Role = accountExist.Role,
                 AccessToken = new JwtGenerateHelper(_configuration).GenerateToken(accountExist)
             };
         }
