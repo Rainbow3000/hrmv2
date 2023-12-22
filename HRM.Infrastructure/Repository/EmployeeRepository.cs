@@ -1,4 +1,5 @@
 ﻿using Core.Entity;
+using HRM.Core.Dto.Filter;
 using HRM.Core.Interface.Repository;
 using HRM.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +32,7 @@ namespace HRM.Infrastructure.Repository
             return rowEffected; 
         }
 
-        public async Task<List<EmployeeEntity>> GetAllAsync()
+        public async Task<List<EmployeeEntity>> GetAllAsync(FilterDto filterDto)
         {
             return await _dbContext.Employees
                 .Include(e => e.WorkInfo)

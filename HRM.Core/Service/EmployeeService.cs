@@ -14,6 +14,7 @@ using Core.Dto.WorkInfo;
 using Core.Entity;
 using Core.Exceptions;
 using Core.Interface.Repository;
+using HRM.Core.Dto.Filter;
 using HRM.Core.Helper;
 using HRM.Core.Interface.Repository;
 using HRM.Core.Interface.Service;
@@ -48,11 +49,11 @@ namespace HRM.Core.Service
             return await _employeeRepository.DeleteAsync(id); 
         }
 
-        public async Task<List<EmployeeDto>> GetAllAsync()
+        public async Task<List<EmployeeDto>> GetAllAsync(FilterDto filter)
         {
 
             List<EmployeeDto> employeeDtos = new List<EmployeeDto>();
-            var employeeEntities = await _employeeRepository.GetAllAsync();
+            var employeeEntities = await _employeeRepository.GetAllAsync(filter);
 
             if(employeeEntities.Count > 0)
             {
@@ -356,10 +357,16 @@ namespace HRM.Core.Service
             {
                 throw new NotFoundException("Nhân viên không tồn tại");
             }
+            
 
-            if(employeeExisted.Code == employeeUpdateDto.Code)
+
+            if(employeeExisted.Code != employeeUpdateDto.Code)
             {
-                throw new DuplicateException("Mã nhân viên đã tồn tại");
+                var findEmployeeByCode = await _employeeRepository.getByCode(employeeUpdateDto.Code);
+                if(findEmployeeByCode != null)
+                {
+                    throw new DuplicateException("Mã nhân viên đã tồn tại");
+                }
             }
 
             // Map từ EntityUpdateDto thành Entity

@@ -3,6 +3,7 @@ using Core.DataResponse;
 using Core.Dto.Employee;
 using Core.Interface.Service;
 using Filter.Jwt;
+using HRM.Core.Dto.Filter;
 using HRM.Core.Interface.Repository;
 using HRM.Core.Interface.Service;
 using Microsoft.AspNetCore.Http;
@@ -21,10 +22,10 @@ namespace HRM.Controllers
         }
 
         [HttpGet]
-        [ServiceFilter(typeof(UserTokenFilter))]
-        public virtual async Task<DataResponse> GetAllAsync()
+        //[ServiceFilter(typeof(UserTokenFilter))]
+        public virtual async Task<DataResponse> GetAllAsync([FromQuery] FilterDto filterDto)
         {
-            var entities = await _employeeService.GetAllAsync();
+            var entities = await _employeeService.GetAllAsync(filterDto);
             return new DataResponse(entities, StatusCodes.Status200OK);
         }
 
@@ -38,7 +39,7 @@ namespace HRM.Controllers
         }
 
         [HttpPost]
-        [ServiceFilter(typeof(AdminTokenFilter))]
+        //[ServiceFilter(typeof(AdminTokenFilter))]
         public virtual async Task<DataResponse> InsertAsync(EmployeeCreateDto employeeCreateDto)
         {
             var employeeDto = await _employeeService.InsertAsync(employeeCreateDto);

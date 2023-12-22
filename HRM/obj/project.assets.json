@@ -1473,19 +1473,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nguye\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\hrmv2\\HRM\\HRM.csproj",
+      "projectUniqueName": "C:\\hrmv2\\HRM\\HRM.csproj",
       "projectName": "HRM",
-      "projectPath": "D:\\hrmv2\\HRM\\HRM.csproj",
-      "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-      "outputPath": "D:\\hrmv2\\HRM\\obj\\",
+      "projectPath": "C:\\hrmv2\\HRM\\HRM.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\hrmv2\\HRM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1493,18 +1493,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
-              "projectPath": "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj"
+            "C:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
+              "projectPath": "C:\\hrmv2\\HRM.Core\\HRM.Core.csproj"
             },
-            "D:\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj": {
-              "projectPath": "D:\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj"
+            "C:\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj": {
+              "projectPath": "C:\\hrmv2\\HRM.Infrastructure\\HRM.Infrastructure.csproj"
             }
           }
         }
@@ -1543,7 +1542,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {}
+    "C:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {}
   },
   "projects": {
-    "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
+    "C:\\hrmv2\\HRM.Core\\HRM.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj",
+        "projectUniqueName": "C:\\hrmv2\\HRM.Core\\HRM.Core.csproj",
         "projectName": "HRM.Core",
-        "projectPath": "D:\\hrmv2\\HRM.Core\\HRM.Core.csproj",
-        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\hrmv2\\HRM.Core\\obj\\",
+        "projectPath": "C:\\hrmv2\\HRM.Core\\HRM.Core.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\hrmv2\\HRM.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
