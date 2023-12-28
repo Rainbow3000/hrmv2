@@ -6,7 +6,7 @@ namespace HRM.Core.Interface.Service
     public interface IEmployeeService
     {
         Task<EmployeeDto> GetAsync(Guid id);
-        Task<List<EmployeeDto>> GetAllAsync(FilterDto filterDto);
+        Task<(List<EmployeeDto>,int)> GetAllAsync(FilterDto filterDto);
         Task<EmployeeDto> InsertAsync(EmployeeCreateDto employeeCreateDto);
         Task<EmployeeDto> UpdateAsync(EmployeeUpdateDto employeeUpdateDto, Guid id);
         Task<int> DeleteAsync(Guid id);

@@ -11,7 +11,7 @@ namespace HRM.Core.Interface.Repository
     public interface IEmployeeRepository
     {
         Task<EmployeeEntity> GetAsync(Guid id);  
-        Task<List<EmployeeEntity>> GetAllAsync(FilterDto filterDto);  
+        Task<(List<EmployeeEntity>,int)> GetAllAsync(FilterDto filterDto);  
         Task<EmployeeEntity> getByCode(string code);
         Task<int> InsertAsync(EmployeeEntity employeeEntity);  
         Task<int> UpdateAsync(EmployeeEntity employeeEntity, Guid id);  

@@ -49,11 +49,12 @@ namespace HRM.Core.Service
             return await _employeeRepository.DeleteAsync(id); 
         }
 
-        public async Task<List<EmployeeDto>> GetAllAsync(FilterDto filter)
+        public async Task<(List<EmployeeDto>,int)> GetAllAsync(FilterDto filter)
         {
 
             List<EmployeeDto> employeeDtos = new List<EmployeeDto>();
-            var employeeEntities = await _employeeRepository.GetAllAsync(filter);
+
+            var (employeeEntities,totalSize) = await _employeeRepository.GetAllAsync(filter);
 
             if(employeeEntities.Count > 0)
             {
@@ -139,7 +140,7 @@ namespace HRM.Core.Service
                 });
             }
 
-            return employeeDtos;
+            return (employeeDtos,totalSize);
         }
 
         public async Task<EmployeeDto> GetAsync(Guid id)

@@ -31,7 +31,7 @@ namespace Core.Dto.Employee
         public Gender Gender { get; set; }
         public string PhoneNumber { get; set; }
         public string OrganEmail { get; set; }
-        public string IdentifyType { get; set; }
+        public IdentifyType IdentifyType { get; set; }
         public string IdentifyNumber { get; set; }
         public string IdentifyDateRange { get; set; }
         public string IdentifyIssuedBy { get; set; }
@@ -53,6 +53,6 @@ namespace Core.Dto.Employee
         public SalaryInfoDto SalaryInfoDto { get; set; }
         public List<AllowanceSalaryDto> AllowanceSalaryDtos { get; set; }
         public List<DeductibleSalaryDto> DeductibleSalaryDtos { get; set; }
-
-    }
+        public int TotalSize { get; set; }
+    }   
 }

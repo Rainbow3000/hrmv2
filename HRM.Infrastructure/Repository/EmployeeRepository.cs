@@ -32,9 +32,9 @@ namespace HRM.Infrastructure.Repository
             return rowEffected; 
         }
 
-        public async Task<List<EmployeeEntity>> GetAllAsync(FilterDto filterDto)
+        public async Task<(List<EmployeeEntity>,int)> GetAllAsync(FilterDto filterDto)
         {
-            return await _dbContext.Employees
+            List<EmployeeEntity> employeeList =  await _dbContext.Employees
                 .Include(e => e.WorkInfo)
                 .Include(e => e.Education)
                 .Include(e => e.Experience)
@@ -46,8 +46,12 @@ namespace HRM.Infrastructure.Repository
                 .Include(e => e.SalaryInfo)
                 .Include(e => e.AllowanceSalary)
                 .Include(e => e.DeductibleSalary)
-                .ToListAsync();
+                .Skip(filterDto.Offset).Take(filterDto.Limit).ToListAsync();
+            int totalSize = await _dbContext.Employees.CountAsync();
+            return (employeeList, totalSize);
         }
+
+ 
 
         public async Task<EmployeeEntity> GetAsync(Guid id)
         {

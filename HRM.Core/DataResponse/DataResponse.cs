@@ -10,9 +10,11 @@ namespace Core.DataResponse
     {
         public object Data { get; set; }
         public int StatusCode { get; set; }
-        public DataResponse(object data , int code) {
+        public int? TotalSize { get; set; }
+        public DataResponse(object data , int code, int? totalSize = null) {
              Data = data ;
              StatusCode = code;
+            TotalSize = totalSize;
         }
     }
 }

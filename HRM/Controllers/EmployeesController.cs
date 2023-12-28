@@ -25,13 +25,13 @@ namespace HRM.Controllers
         //[ServiceFilter(typeof(UserTokenFilter))]
         public virtual async Task<DataResponse> GetAllAsync([FromQuery] FilterDto filterDto)
         {
-            var entities = await _employeeService.GetAllAsync(filterDto);
-            return new DataResponse(entities, StatusCodes.Status200OK);
+            var (entities,totalSize) = await _employeeService.GetAllAsync(filterDto);
+            return new DataResponse(entities, StatusCodes.Status200OK, totalSize);
         }
 
         [HttpGet("{id}")]
-        [ServiceFilter(typeof(AdminTokenFilter))]
-        [ServiceFilter(typeof(UserTokenFilter))]
+        //[ServiceFilter(typeof(AdminTokenFilter))]
+        //[ServiceFilter(typeof(UserTokenFilter))]
         public virtual async Task<DataResponse> GetAsync(Guid id)
         {
             var entities = await _employeeService.GetAsync(id);
@@ -46,7 +46,7 @@ namespace HRM.Controllers
             return new DataResponse(employeeDto, StatusCodes.Status200OK);
         }
         [HttpPut("{id}")]
-        [ServiceFilter(typeof(AdminTokenFilter))]
+        //[ServiceFilter(typeof(AdminTokenFilter))]
         public virtual async Task<DataResponse> UpdateAsync(EmployeeUpdateDto employeeUpdateDto,Guid id )
         {
             var employeeDto = await _employeeService.UpdateAsync(employeeUpdateDto,id);
@@ -54,7 +54,7 @@ namespace HRM.Controllers
         }
 
         [HttpDelete("{id}")]
-        [ServiceFilter(typeof(AdminTokenFilter))]
+        //[ServiceFilter(typeof(AdminTokenFilter))]
         public virtual async Task<DataResponse> DeleteAsync(Guid id)
         {
             var employeeDto = await _employeeService.DeleteAsync(id);

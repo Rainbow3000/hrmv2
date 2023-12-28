@@ -14,9 +14,9 @@ namespace HRM.Core.Dto.Filter
         public string? UnitId { get; set; }
         public Gender? Gender { get; set; }
         public ContractType? ContractType { get; set; }
-        public WorkType? WorkType { get; set; }
-        public int? Limit { get; set; }
-        public int? Offset { get; set; }
+        public WorkStatus? WorkStatus { get; set; }
+        public int Limit { get; set; }
+        public int Offset { get; set; }
         
     }
 }
