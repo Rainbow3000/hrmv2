@@ -49,12 +49,44 @@ namespace HRM.Core.Service
             return await _employeeRepository.DeleteAsync(id); 
         }
 
-        public async Task<(List<EmployeeDto>,int)> GetAllAsync(FilterDto filter)
+        public async Task<(List<EmployeeDto>, int)> GetAllAsync(FilterDto filter)
         {
 
             List<EmployeeDto> employeeDtos = new List<EmployeeDto>();
 
-            var (employeeEntities,totalSize) = await _employeeRepository.GetAllAsync(filter);
+            var (employeeEntities, totalSize) = await _employeeRepository.GetAllAsync(filter);
+
+
+            if (filter.CodeOrName != null)
+            {
+                employeeEntities = employeeEntities.Where(item => item.Fullname == filter.CodeOrName || item.Code == filter.CodeOrName).ToList();
+            }
+
+            if (filter.Gender != null)
+            {
+                employeeEntities = employeeEntities.Where(item => item.Gender == filter.Gender).ToList();
+            }
+
+            if (filter.PositionId != null)
+            {
+                employeeEntities = employeeEntities.Where(item => item.WorkInfo.PositionId == filter.PositionId).ToList();
+            }
+
+            if (filter.UnitId != null)
+            {
+                employeeEntities = employeeEntities.Where(item => item.WorkInfo.UnitId == filter.UnitId).ToList();
+            }
+
+                if (filter.ContractType != null)
+            {
+                employeeEntities = employeeEntities.Where(item => item.WorkInfo.ContractType == filter.ContractType).ToList();
+            }
+
+            if(filter.WorkStatus != null)
+            {
+                employeeEntities = employeeEntities.Where(item => item.WorkInfo.Status == filter.WorkStatus).ToList();
+            }
+
 
             if(employeeEntities.Count > 0)
             {
